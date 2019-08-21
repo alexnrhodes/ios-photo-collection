@@ -77,16 +77,18 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Gallery" id="yGL-dX-GaY">
-                        <barButtonItem key="leftBarButtonItem" title="Setttings" id="UGb-6M-O0g">
-                            <connections>
-                                <segue destination="abv-DE-5od" kind="show" identifier="ThemeSettingsSegue" id="6Rt-WU-wbY"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wrP-dr-Kme">
-                            <connections>
-                                <segue destination="eFf-KQ-Z3Q" kind="show" identifier="AddPhotoSegue" id="di8-FF-RLo"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="wrP-dr-Kme">
+                                <connections>
+                                    <segue destination="eFf-KQ-Z3Q" kind="show" identifier="AddPhotoSegue" id="di8-FF-RLo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="settings" id="UGb-6M-O0g">
+                                <connections>
+                                    <segue destination="abv-DE-5od" kind="show" identifier="ThemeSettingsSegue" id="6Rt-WU-wbY"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UT7-98-aKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,15 +113,6 @@
                                     <action selector="segmentedCotrollToggle:" destination="abv-DE-5od" eventType="valueChanged" id="PLL-CT-JQx"/>
                                 </connections>
                             </segmentedControl>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="in6-ux-QeK">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="cancel" id="rXf-Fg-5Ed"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ncN-p1-XbQ"/>
-                                    <barButtonItem systemItem="save" id="72G-Du-AtF"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -218,4 +211,7 @@
             <point key="canvasLocation" x="-252.17391304347828" y="94.419642857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="30" height="30"/>
+    </resources>
 </document>

@@ -19,16 +19,22 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.clearsSelectionOnViewWillAppear = false
+        setViews()
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setViews()
     }
     
     func setViews() {
         
         if themePreference?.lightTheme == true {
-            // Light theme setup
+            collectionView.backgroundColor = .white
         } else {
-            // Dark Theme Setup
+            collectionView.backgroundColor = .black
+            collectionView.tintColor = .black
+            navigationItem.titleView?.tintColor = .white
         }
     }
 
@@ -42,6 +48,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == "ThemeSettingsSegue" {
             guard let themeSettingsVC = segue.destination as? ThemePreferenceViewController else {return}
             themeSettingsVC.themePreference = themePreference
+            themeSettingsVC.collectionView = collectionView
         }
     }
 

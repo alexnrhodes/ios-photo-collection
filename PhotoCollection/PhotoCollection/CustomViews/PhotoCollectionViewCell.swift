@@ -19,4 +19,11 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoNameLabel: UILabel!
     
+    
+    func setViews() {
+        guard let photo = photo else {return}
+        photoImageView.image = photo.photo
+        photoNameLabel.text = photo.name
+    }
+    
 }

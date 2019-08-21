@@ -23,9 +23,25 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setViews()
         
     }
+    
+    func setViews() {
+        photoImageView.backgroundColor = .lightGray
+        
+        savePhotoButton.setTitle("SAVE", for: .normal)
+        savePhotoButton.setTitleColor(.white, for: .normal)
+        savePhotoButton.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        savePhotoButton.layer.cornerRadius = 8
+        
+        uploadImageButton.setTitle("SAVE", for: .normal)
+        uploadImageButton.setTitleColor(.white, for: .normal)
+        uploadImageButton.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        uploadImageButton.layer.cornerRadius = 8
+        
+    }
+    
     @IBAction func uploadImageButtonTapped(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
