@@ -31,7 +31,19 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func setViews() {
-        photoController?.changeTheme()
+        
+        let userDefaults = UserDefaults.standard.integer(forKey: .selectedSegmentIndex)
+        
+        guard let themeStyle = Theme(rawValue: userDefaults) else {return}
+        
+        
+        if themeStyle == .light {
+            view.backgroundColor = .white
+        } else {
+            view.backgroundColor = .black
+        }
+        
+        
         photoImageView.backgroundColor = .lightGray
         
         savePhotoButton.setTitle("SAVE", for: .normal)
@@ -92,6 +104,11 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
 
     
     @IBAction func saveImageButtonTapped(_ sender: UIButton) {
+        
+        guard let photoCheck = photo  else {return}
+        if !photoCheck.name.isEmpty {
+        navigationController?.popViewController(animated: true)
+        }
         guard let photo = photoImageView.image,
             let name = photoNameTextField.text else {return}
         

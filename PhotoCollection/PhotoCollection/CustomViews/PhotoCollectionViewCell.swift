@@ -24,6 +24,17 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         guard let photo = photo else {return}
         photoImageView.image = photo.photo
         photoNameLabel.text = photo.name
+        
+        let userDefaults = UserDefaults.standard.integer(forKey: .selectedSegmentIndex)
+        
+        guard let themeStyle = Theme(rawValue: userDefaults) else {return}
+        
+        if themeStyle == .light {
+            photoNameLabel.textColor = .black
+        } else {
+            photoNameLabel.textColor = .white
+        }
+        
     }
     
 }
