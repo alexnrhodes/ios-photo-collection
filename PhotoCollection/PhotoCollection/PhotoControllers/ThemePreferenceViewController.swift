@@ -46,11 +46,9 @@ class ThemePreferenceViewController: UIViewController {
         
         if segmentedContol.selectedSegmentIndex == 0 {
             themePreference?.lightTheme = true
-            themePreference?.darkTheme = false
             collectionView?.reloadData()
             setLightTheme()
         } else {
-            themePreference?.darkTheme = true
             themePreference?.lightTheme = false
             collectionView?.reloadData()
             setDarkTheme()

@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-struct Photo {
+struct Photo: Equatable {
     var name: String
-    var photo: UIImage
+    var photo: UIImage?
+    
+    init(name: String, photo: UIImage) {
+        self.name = name
+        self.photo = photo
+    }
 }

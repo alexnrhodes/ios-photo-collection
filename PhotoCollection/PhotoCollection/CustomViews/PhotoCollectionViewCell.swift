@@ -12,7 +12,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     var photo: Photo? {
         didSet {
-            
+           setViews()
         }
     }
     

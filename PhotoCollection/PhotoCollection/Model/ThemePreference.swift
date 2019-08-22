@@ -10,5 +10,4 @@ import Foundation
 
 struct ThemePreference {
     var lightTheme: Bool = true
-    var darkTheme: Bool
 }

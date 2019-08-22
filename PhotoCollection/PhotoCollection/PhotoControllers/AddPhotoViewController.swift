@@ -14,6 +14,10 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var collectionView: UICollectionView?
     
+    var themePreference: ThemePreference?
+    
+    var photo: Photo?
+    
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoNameTextField: UITextField!
@@ -35,10 +39,14 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         savePhotoButton.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         savePhotoButton.layer.cornerRadius = 8
         
-        uploadImageButton.setTitle("SAVE", for: .normal)
+        uploadImageButton.setTitle("UPLOAD IMAGE", for: .normal)
         uploadImageButton.setTitleColor(.white, for: .normal)
         uploadImageButton.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         uploadImageButton.layer.cornerRadius = 8
+        
+        guard let photo = photo  else {return}
+        photoImageView.image = photo.photo
+        photoNameTextField.text = photo.name
         
     }
     
@@ -88,7 +96,6 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
             let name = photoNameTextField.text else {return}
         
         photoController?.addPhoto(name: name, image: photo)
-        collectionView?.reloadData()
         navigationController?.popViewController(animated: true)
     }
 }

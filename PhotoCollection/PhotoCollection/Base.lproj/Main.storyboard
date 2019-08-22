@@ -19,24 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W9F-Mf-dX3">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="177" height="198"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="cBD-3g-lSo" customClass="PhotoCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <rect key="frame" x="20" y="20" width="177" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="177" height="198"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiW-dC-q7a">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="126"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t5y-iw-oWI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t5y-iw-oWI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="126"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +48,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGo-ys-xU9">
-                                            <rect key="frame" x="79" y="150" width="42" height="21"/>
+                                            <rect key="frame" x="67.5" y="148" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -64,10 +64,11 @@
                                     <constraint firstAttribute="trailing" secondItem="QiW-dC-q7a" secondAttribute="trailing" id="ZIU-He-pFb"/>
                                     <constraint firstItem="cGo-ys-xU9" firstAttribute="top" secondItem="QiW-dC-q7a" secondAttribute="bottom" constant="22" id="tAA-YS-bt4"/>
                                 </constraints>
-                                <size key="customSize" width="200" height="200"/>
+                                <size key="customSize" width="177" height="198"/>
                                 <connections>
                                     <outlet property="photoImageView" destination="t5y-iw-oWI" id="2sk-Qg-jtv"/>
                                     <outlet property="photoNameLabel" destination="cGo-ys-xU9" id="58b-wm-MfP"/>
+                                    <segue destination="eFf-KQ-Z3Q" kind="show" identifier="PhotoCellDetailSegue" id="cYu-Hs-1Sz"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -93,7 +94,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UT7-98-aKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="657.97101449275362" y="94.419642857142847"/>
+            <point key="canvasLocation" x="656.52173913043487" y="94.419642857142847"/>
         </scene>
         <!--Theme Settings-->
         <scene sceneID="zGf-Vz-t26">
@@ -138,7 +139,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-Ti-Ql1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-Ti-Ql1">
                                 <rect key="frame" x="20" y="160" width="374" height="238"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0b-d9-Zia">
@@ -214,4 +215,7 @@
     <resources>
         <image name="settings" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cYu-Hs-1Sz"/>
+    </inferredMetricsTieBreakers>
 </document>

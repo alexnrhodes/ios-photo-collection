@@ -11,7 +11,9 @@ import UIKit
 
 class PhotoController {
     
-    var photos: [Photo] = [Photo(name: "Ocean Breeze", photo: UIImage(named: "ocean")!)]
+    
+    var photos: [Photo] = [Photo(name: "Ocean Breeze", photo: UIImage(named: "ocean")!)] 
+   
     
     func addPhoto(name: String, image: UIImage) {
         let photo = Photo(name: name, photo: image)
