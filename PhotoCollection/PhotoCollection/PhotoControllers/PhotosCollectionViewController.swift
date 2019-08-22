@@ -13,8 +13,6 @@ private let reuseIdentifier = "PhotoCell"
 class PhotosCollectionViewController: UICollectionViewController {
     
     var photoController = PhotoController()
-    
-    var themePreference: ThemePreference?
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,17 +23,18 @@ class PhotosCollectionViewController: UICollectionViewController {
     func setViews() {
         
         collectionView.reloadData()
+        photoController.changeTheme()
         
-        if let theme = themePreference {
-            if theme.lightTheme == true {
-                collectionView.backgroundColor = .clear
-            } else {
-                collectionView.backgroundColor = .black
-                collectionView.tintColor = .black
-                navigationItem.titleView?.tintColor = .white
-                view.backgroundColor = .black
-            }
-        }
+//        if let theme = themePreference {
+//            if theme.lightTheme == true {
+//                collectionView.backgroundColor = .clear
+//            } else {
+//                collectionView.backgroundColor = .black
+//                collectionView.tintColor = .black
+//                navigationItem.titleView?.tintColor = .white
+//                view.backgroundColor = .black
+//            }
+//        }
     }
 
 //    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

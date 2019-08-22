@@ -14,8 +14,6 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var collectionView: UICollectionView?
     
-    var themePreference: ThemePreference?
-    
     var photo: Photo?
     
     
@@ -29,9 +27,11 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         setViews()
         
+        
     }
     
     func setViews() {
+        photoController?.changeTheme()
         photoImageView.backgroundColor = .lightGray
         
         savePhotoButton.setTitle("SAVE", for: .normal)

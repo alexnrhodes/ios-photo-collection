@@ -44,6 +44,9 @@ class ThemePreferenceViewController: UIViewController {
     }
     @IBAction func segmentedCotrollToggle(_ sender: UISegmentedControl) {
         
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(sender.selectedSegmentIndex, forKey: .selectedSegmentIndex)
+        
         if segmentedContol.selectedSegmentIndex == 0 {
             themePreference?.lightTheme = true
             collectionView?.reloadData()

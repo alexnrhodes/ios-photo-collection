@@ -9,5 +9,5 @@
 import Foundation
 
 extension String {
-    static var themePreferenceKey = ""
+    static var selectedSegmentIndex = "SelectedSegmentIndex"
 }

@@ -12,8 +12,11 @@ import UIKit
 class PhotoController {
     
     
-    var photos: [Photo] = [Photo(name: "Ocean Breeze", photo: UIImage(named: "ocean")!)] 
+    var photos: [Photo] = [Photo(name: "Ocean Breeze", photo: UIImage(named: "ocean")!)]
    
+    func changeTheme() {
+        let themePreference = UserDefaults.standard.integer(forKey: .selectedSegmentIndex)
+    }
     
     func addPhoto(name: String, image: UIImage) {
         let photo = Photo(name: name, photo: image)
